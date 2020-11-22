@@ -123,6 +123,41 @@ function addEngineer() {
   });
 };
 
+// this function asks for interns info and pushes to employees array
+function addIntern() {
+  const questions = [
+    {
+      type: "input",
+      message: "What is the intern's name?",
+      name: "internName"
+    },
+    {
+      type: "input",
+      message: "What is the intern's ID?",
+      name: "internId"
+    },
+    {
+      type: "input",
+      message: "What is the intern's email?",
+      name: "internEmail"
+    },
+    {
+      type: "input",
+      message: "What school does the intern attend?",
+      name: "internSchool"
+    }
+  ];
+  inquirer.prompt(questions).then((res) => {
+    const person = new Intern(
+      res.internName,
+      res.internId,
+      res.internEmail,
+      res.internSchool
+    );
+      employees.push(person);
+  });
+};
+
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
 // generate and return a block of HTML including templated divs for each employee!

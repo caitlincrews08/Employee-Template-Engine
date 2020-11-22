@@ -13,9 +13,6 @@ const render = require("./lib/htmlRenderer");
 // array that will store rendered employees
 const employees = [];
 
-// Write code to use inquirer to gather information about the development team members,
-// and to create objects for each team member (using the correct classes as blueprints!)
-
 // inititial function that runs program
 function init() {
   addManager(); //each team requires a manager
@@ -108,6 +105,7 @@ function addManager() {
       res.managerOffice
     );
       employees.push(person);
+      console.log("Manager added.")
       askToAdd();
   });
 };
@@ -144,6 +142,7 @@ function addEngineer() {
       res.engineerGithub
     );
       employees.push(person);
+      console.log("Engineer added.")
       askToAdd();
   });
 };
@@ -180,6 +179,7 @@ function addIntern() {
       res.internSchool
     );
       employees.push(person);
+      console.log("Intern added.")
       askToAdd();
   });
 };

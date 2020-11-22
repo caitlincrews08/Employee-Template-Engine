@@ -54,18 +54,32 @@ function whichMember() {
   const memberQ = [
     {
       type: "input",
-      message: "Would you like to add an employee, engineer, or intern?",
+      message: "Would you like to add an engineer or an intern?",
       name: "memberType"
     }
-  ]
-}
+  ];
+  inquirer.prompt(memberQ).then((res) => {
+    let upperRes = res.memberType.toUpperCase();
+    switch(upperRes) {
+      case "ENGINEER":
+        addEngineer();
+        break;
+      case "INTERN":
+        addIntern();
+        break;
+      default:
+        console.log("Please enter 'engineer' or 'intern'.");
+        whichMember();
+    }
+  });
+};
 
 // this function asks user for manager info and pushes to employees array
 function addManager() {
   const questions = [
     {
       type: "input",
-      message: "What is the manager's name?",
+      message: "What is the name of the manager of this team?",
       name: "managerName"
     },
     {

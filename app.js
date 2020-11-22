@@ -47,7 +47,7 @@ function askToAdd() {
         console.log("Please enter 'yes' or 'no'.");
         askToAdd();
     }
-  })
+  });
 };
 
 function whichMember() {
@@ -106,6 +106,7 @@ function addManager() {
       res.managerOffice
     );
       employees.push(person);
+      askToAdd();
   });
 };
 
@@ -141,6 +142,7 @@ function addEngineer() {
       res.engineerGithub
     );
       employees.push(person);
+      askToAdd();
   });
 };
 
@@ -176,6 +178,7 @@ function addIntern() {
       res.internSchool
     );
       employees.push(person);
+      askToAdd();
   });
 };
 

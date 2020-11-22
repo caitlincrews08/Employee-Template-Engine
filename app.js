@@ -24,6 +24,36 @@ function init() {
 init();
 // --------------------------------------------------------------------
 
+// this function asks the user if they would like to add a new member, then directs them to the function that handles further input questions
+function askToAdd() {
+  const ask = [
+    {
+      type: "input",
+      message: "Would you like to add another team member?",
+      name: "anotherMember"
+    }
+  ];
+  inquirer.prompt(ask).then((res) => {
+    let upper = res.anotherMember.toUpperCase();
+    switch(upper) {
+      case "Y":
+      case "YES":
+        whichMember();
+        break;
+      case "N":
+      case "NO":
+        break;
+      default:
+        console.log("Please enter 'yes' or 'no'.");
+        askToAdd();
+    }
+  })
+};
+
+function whichMember() {
+  
+}
+
 // this function asks user for manager info and pushes to employees array
 function addManager() {
   const questions = [

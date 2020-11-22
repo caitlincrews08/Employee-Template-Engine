@@ -42,6 +42,7 @@ function askToAdd() {
         break;
       case "N":
       case "NO":
+        console.log("Generating team info...")
         break;
       default:
         console.log("Please enter 'yes' or 'no'.");
@@ -50,6 +51,7 @@ function askToAdd() {
   });
 };
 
+// this function determines which type of member will be added
 function whichMember() {
   const memberQ = [
     {

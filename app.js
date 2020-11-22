@@ -17,8 +17,39 @@ const employees = [];
 // and to create objects for each team member (using the correct classes as blueprints!)
 
 function addManager() {
-
-}
+  const questions = [
+    {
+      type: "input",
+      message: "What is the manager's name?",
+      name: "managerName"
+    },
+    {
+      type: "input",
+      message: "What is the manager's ID?",
+      name: "managerId"
+    },
+    {
+      type: "input",
+      message: "What is the manager's email?",
+      name: "managerEmail"
+    },
+    {
+      type: "input",
+      message: "What is the manager's office number?",
+      name: "managerOffice"
+    }
+  ];
+  inquirer.prompt(questions).then((res) => {
+    const person = new Manager(
+      res.managerName,
+      res.managerId,
+      res.managerEmail,
+      res.managerOffice
+    );
+      employees.push(person);
+      
+  });
+};
 
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will

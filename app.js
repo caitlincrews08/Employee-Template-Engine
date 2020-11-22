@@ -51,7 +51,13 @@ function askToAdd() {
 };
 
 function whichMember() {
-  
+  const memberQ = [
+    {
+      type: "input",
+      message: "Would you like to add an employee, engineer, or intern?",
+      name: "memberType"
+    }
+  ]
 }
 
 // this function asks user for manager info and pushes to employees array
@@ -84,35 +90,6 @@ function addManager() {
       res.managerId,
       res.managerEmail,
       res.managerOffice
-    );
-      employees.push(person);
-  });
-};
-
-// this function asks for employee info and pushes to employees array
-function addEmployee() {
-  const questions = [
-    {
-      type: "input",
-      message: "What is the employee's name?",
-      name: "employeeName"
-    },
-    {
-      type: "input",
-      message: "What is the employee's ID?",
-      name: "employeeId"
-    },
-    {
-      type: "input",
-      message: "What is the employee's email?",
-      name: "employeeEmail"
-    }
-  ];
-  inquirer.prompt(questions).then((res) => {
-    const person = new Employee(
-      res.employeeName,
-      res.employeeId,
-      res.employeeEmail
     );
       employees.push(person);
   });

@@ -18,7 +18,7 @@ const employees = [];
 
 // inititial function that runs program
 function init() {
-  addManager(); //each project requires a manager
+  addManager(); //each team requires a manager
 };
 
 init();

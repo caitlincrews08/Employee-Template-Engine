@@ -16,6 +16,15 @@ const employees = [];
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
+// inititial function that runs program
+function init() {
+  addManager(); //each project requires an engineer
+};
+
+init();
+// --------------------------------------------------------------------
+
+// this function asks user for manager info and pushes to employees array
 function addManager() {
   const questions = [
     {
@@ -47,7 +56,70 @@ function addManager() {
       res.managerOffice
     );
       employees.push(person);
-      
+  });
+};
+
+// this function asks for employee info and pushes to employees array
+function addEmployee() {
+  const questions = [
+    {
+      type: "input",
+      message: "What is the employee's name?",
+      name: "employeeName"
+    },
+    {
+      type: "input",
+      message: "What is the employee's ID?",
+      name: "employeeId"
+    },
+    {
+      type: "input",
+      message: "What is the employee's email?",
+      name: "employeeEmail"
+    }
+  ];
+  inquirer.prompt(questions).then((res) => {
+    const person = new Employee(
+      res.employeeName,
+      res.employeeId,
+      res.employeeEmail
+    );
+      employees.push(person);
+  });
+};
+
+// this function asks for engineers info and pushes to employees array
+function addEngineer() {
+  const questions = [
+    {
+      type: "input",
+      message: "What is the engineer's name?",
+      name: "engineerName"
+    },
+    {
+      type: "input",
+      message: "What is the engineer's ID?",
+      name: "engineerId"
+    },
+    {
+      type: "input",
+      message: "What is the engineer's email?",
+      name: "engineerEmail"
+    },
+    {
+      type: "input",
+      message: "What is the engineer's GitHub username?",
+      name: "engineerGithub"
+    }
+  ];
+  inquirer.prompt(questions).then((res) => {
+    const person = new Engineer(
+      res.engineerName,
+      res.engineerId,
+      res.engineerEmail,
+      res.engineerGithub
+    );
+      employees.push(person);
   });
 };
 

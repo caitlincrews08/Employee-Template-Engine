@@ -3,8 +3,7 @@
   ## Description
   This website was developed as part of my week 10 homework assignment for the Coding Bootcamp at the University of Central Florida.
 
-  This program 
-
+  This program consists of a Node CLI that takes in information about employees and generates an HTML webpage that displays summaries for each person.
 
 
   ## Table of Contents
@@ -23,10 +22,14 @@
 
   
   ## Usage
-  When the user runs `node app.js` in the terminal, they are prompted with questions concerning the manager of the team. When all prompts concerning the manager have been answered, the user is asked if they would like to add additional members of the team. The user can add an engineer or intern and answer all relevent questions. Once the user has signified that they are finished adding team members, a `team.html` file is generated in the `output` folder.
+  When the user runs `node app.js` in the terminal, they are prompted with questions concerning the manager of the team. 
+  
+  When all prompts concerning the manager have been answered, the user is asked if they would like to add additional members of the team. The user can add an engineer or intern and answer all relevent questions.
+  
+  Once the user has signified that they are finished adding team members, a `team.html` file is generated in the `output` folder.
 
   <br>
-  See example demo here:
+  See example demonstration here:
 
   [![demo](./assets/team_builder_demo.png)](https://drive.google.com/file/d/1yFYU7pptK8jV7ZsQMH1mY_vyWoRofpUj/view?usp=sharing)
 

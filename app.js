@@ -40,6 +40,7 @@ function askToAdd() {
       case "N":
       case "NO":
         console.log("Generating team info...")
+        // this renders the file!!!
         renderFile(outputPath, render(employees));
         console.log("Please check the output directory for your file.")
         break;
@@ -75,7 +76,7 @@ function whichMember() {
   });
 };
 
-// this function asks user for manager info and pushes to employees array
+// this function asks user for manager info and pushes to employees array then runs askToAdd function above
 function addManager() {
   const questions = [
     {
@@ -112,7 +113,7 @@ function addManager() {
   });
 };
 
-// this function asks for engineers info and pushes to employees array
+// this function asks for engineers info and pushes to employees array then runs askToAdd function above
 function addEngineer() {
   const questions = [
     {
@@ -149,7 +150,7 @@ function addEngineer() {
   });
 };
 
-// this function asks for interns info and pushes to employees array
+// this function asks for interns info and pushes to employees array then runs askToAdd function above
 function addIntern() {
   const questions = [
     {
@@ -190,23 +191,3 @@ function addIntern() {
 function renderFile(path, data) {
   return fs.writeFileSync(path, data);
 };
-
-// After the user has input all employees desired, call the `render` function (required
-// above) and pass in an array containing all employee objects; the `render` function will
-// generate and return a block of HTML including templated divs for each employee!
-
-// After you have your html, you're now ready to create an HTML file using the HTML
-// returned from the `render` function. Now write it to a file named `team.html` in the
-// `output` folder. You can use the variable `outputPath` above target this location.
-// Hint: you may need to check if the `output` folder exists and create it if it
-// does not.
-
-// HINT: each employee type (manager, engineer, or intern) has slightly different
-// information; write your code to ask different questions via inquirer depending on
-// employee type.
-
-// HINT: make sure to build out your classes first! Remember that your Manager, Engineer,
-// and Intern classes should all extend from a class named Employee; see the directions
-// for further information. Be sure to test out each class and verify it generates an
-// object with the correct structure and methods. This structure will be crucial in order
-// for the provided `render` function to work! ```

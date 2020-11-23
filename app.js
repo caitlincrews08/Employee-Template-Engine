@@ -40,6 +40,8 @@ function askToAdd() {
       case "N":
       case "NO":
         console.log("Generating team info...")
+        renderFile(outputPath, render(employees));
+        console.log("Please check the output directory for your file.")
         break;
       default:
         console.log("Please enter 'yes' or 'no'.");
@@ -182,6 +184,11 @@ function addIntern() {
       console.log("Intern added.")
       askToAdd();
   });
+};
+
+// this function renders a completed team file
+function renderFile(path, data) {
+  return fs.writeFileSync(path, data);
 };
 
 // After the user has input all employees desired, call the `render` function (required

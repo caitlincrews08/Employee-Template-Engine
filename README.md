@@ -14,7 +14,7 @@
   
   
   ## Installation
-  This program requires Node.js, Inquirer.js, and Jest. To install necessarry dependencies, run the following command:
+  This program requires Node.js, Inquirer.js, and Jest. To install necessary dependencies, run the following command:
 
   ```
   npm i
